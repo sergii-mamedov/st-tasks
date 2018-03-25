@@ -1,3 +1,4 @@
+#include <omp.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -46,6 +47,7 @@ void calculate(int numTicks, double delta, double mux, double muy, double b4, in
     int n, in_circle;
     double x0, y0;
 
+    #pragma omp parallel for schedule(dynamic) num_threads(1)
     for (int y = 0; y <= numTicks; y++)
         for (int x = 0; x <= numTicks; x++)
         {
