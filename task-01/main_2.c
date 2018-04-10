@@ -90,5 +90,7 @@ int main(int argc, char const *argv[])
     calculate(X, Y, Z, numPoints, size_XY, delta, mux, muy, b4, numThreads);
     //array_show(Z, numPoints);
 
+    free(X); free(Y); free(Z); free(K);
+
     return 0;
 }
